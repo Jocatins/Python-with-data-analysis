@@ -76,3 +76,57 @@ The first parameter is the variable you would like on the x-axis. The second par
 You can also use the kind parameter to change how the scatter points are visualized. I like passing a value of “hex”.
 
 <!-- Refer to violin-joint.py for code illustration -->
+
+# Line Graph
+
+Line graphs are very useful for showing a value over time, such as a stock’s price. Typically, one would use a line graph over a scatter plot if there is a connecting component between the values, such as time.
+
+The lineplot() function of Seaborn is what plots the line graph. The first parameter is the list or array of x-values and the second parameter is the array of y-values.
+
+<!-- Refer to line-graph.py for code illustration -->
+
+# Heat Maps
+
+Heat maps are used when we want to visualize data in two dimensions, such as temperature and humidity.
+Heat maps are a plotted data matrix where each value in the matrix is a category.
+
+-   You can create heat maps in Python by using the heatmap() function from Seaborn
+
+Some of the core parameters:
+
+-   data is the first parameter and is your matrix of data represented as a Panda’s dataframe.
+-   annot if True will plot the actual data values in each cell.
+-   fmt lets you control the string formatting. A value of “d” uses a decimal integer.
+-   linewidths lets you set the width of the lines which separate each cell.
+-   ax allows you to pass a custom Matplotlib Axes.
+-   cmap allows you to pick the colormap to use when plotting.
+
+# Multi-Plot Grids
+
+When exploring medium-dimensional data, a useful approach is to draw multiple instances of the same plot on different subsets of your dataset. This technique is sometimes called either “lattice” or “trellis” plotting, and it is related to the idea of “small multiples”
+
+It allows a viewer to quickly extract a large amount of information about complex data.
+
+# FacetGrid and map
+
+The parameters we will use for FacetGrid are:
+
+-   data which is the first parameter and specifies the dataframe to use.
+-   row which is the column name from your dataframe you want to use as the rows of your grid.
+-   col which is the column name from your dataframe you want to use as the columns of your grid.
+-   margin_titles which if True, the titles for the row variable are drawn to the right of the last column.
+
+The parameters we will use for map are:
+
+-   func which is the first argument and is the plotting function you wish to use.
+-   args is the second parameter and is the column name for the variable you wish to plot.
+-   color which allows you to specify the plot color.
+    Let’s take a look:
+
+<!-- Refer to line-facetGrid.py for code illustration -->
+
+# PairGrid
+
+This function plots pairwise relationships in a grid. You generally pass one parameter which is a dataframe consisting of the columns you wish to plot.
+
+You then call the map() function which maps the pairwise combinations of your columns onto the plot of your choice. The plotting function you wish to use is the parameter you pass to map().
